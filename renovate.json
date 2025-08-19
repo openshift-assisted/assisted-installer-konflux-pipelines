@@ -1,0 +1,7 @@
+{
+  "schedule": ["on Saturday"],
+  "groupName": "Konflux build pipeline",
+  "includePaths": [".tekton/*", "pipelines/*"],
+  "commitMessagePrefix": "NO-ISSUE: ",
+  "labels": ["lgtm", "approved", "konflux"]
+}
