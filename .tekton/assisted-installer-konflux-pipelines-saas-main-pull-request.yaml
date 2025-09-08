@@ -10,6 +10,7 @@ metadata:
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
       == "main"
+    pipelinesascode.tekton.dev/pipeline: "[pipelines/standard-pipeline.yaml]"
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: assisted-installer-konflux-pipelines-saas-main
@@ -32,14 +33,7 @@ spec:
   - name: path-context
     value: .
   pipelineRef:
-    resolver: git
-    params:
-    - name: url
-      value: "https://github.com/openshift-assisted/assisted-installer-konflux-pipelines.git"
-    - name: revision
-      value: main
-    - name: pathInRepo
-      value: "pipelines/service-component-pipeline.yaml"
+    name: standard-pipeline
   taskRunTemplate:
     serviceAccountName: build-pipeline-assisted-installer-konflux-pipelines-saas-main
   workspaces:
