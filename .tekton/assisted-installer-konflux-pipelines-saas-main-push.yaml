@@ -36,7 +36,7 @@ spec:
     - name: revision
       value: main
     - name: pathInRepo
-      value: "pipelines/service-component-pipeline.yaml"
+      value: "pipelines/standard-pipeline.yaml"
   taskRunTemplate:
     serviceAccountName: build-pipeline-assisted-installer-konflux-pipelines-saas-main
   workspaces:
