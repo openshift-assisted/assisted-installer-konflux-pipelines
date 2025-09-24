@@ -1,25 +1,36 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "tekton": {
-    "schedule": ["on Saturday"],
-    "fileMatch": [
-      "\\.yaml$",
-      "\\.yml$"
+    "schedule": [
+      "on Saturday"
+    ],
+    "managerFilePatterns": [
+      "/\\.yaml$/",
+      "/\\.yml$/"
     ],
     "includePaths": [
-      ".tekton/*", "pipelines/*"
+      ".tekton/*",
+      "pipelines/*"
     ]
   },
   "packageRules": [
     {
-      "schedule": ["on Saturday"],
+      "schedule": [
+        "on Saturday"
+      ],
       "groupName": "Konflux build pipeline",
-      "matchManagers": ["tekton"],
+      "matchManagers": [
+        "tekton"
+      ],
       "commitMessagePrefix": "NO-ISSUE: ",
-      "labels": ["lgtm", "approved", "konflux"]
+      "labels": [
+        "lgtm",
+        "approved",
+        "konflux"
+      ]
     }
   ]
 }
